@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'data.php';
 
 if(isset($_POST['save_product']))
@@ -12,7 +12,7 @@ if(isset($_POST['save_product']))
     $query = "INSERT INTO products (name,price,description,quantity_on_stock) VALUES
         ('$name', '$price', '$description', '$quantity_on_stock')";
 
-    $query_run = mysqli_query($con, $con, $query);
+    $query_run = mysqli_query($con, $query);
     if($query_run)
     {
         $_SESSION['message'] = "Product saved successfully";
