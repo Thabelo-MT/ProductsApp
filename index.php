@@ -55,7 +55,7 @@
                             <td><?= $product['Description']; ?></td>
                             <td><?= $product['quantity_on_stock']; ?></td>
                             <td>
-                              <a href="" class="btn btn-info btn-sm">Read</a>
+                              <a href="products-read.php?id=<?=$product['id'];?>" class="btn btn-info btn-sm">Read</a>
                               <a href="product-update.php?id=<?=$product['id'];?>" class="btn btn-success btn-sm">Update</a>
                               <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
