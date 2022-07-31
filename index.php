@@ -1,3 +1,7 @@
+<?php
+  require 'data.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +13,66 @@
   
   <body>
 
-  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Product Information
+                <a href="products.php" class="btn btn-primary float-end">Add Product</a>
+              </h4>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>  
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Quantity_on_Stock</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    $query = "SELECT * FROM products";
+                    $query_run = mysqli_query($con, $query);
+
+                    if(mysqli_num_rows($query_run) > 0)
+                    {
+                        foreach($query_run as $product)
+                        {
+                          ?>
+                          <tr>
+                            <td><?= $product['id']; ?></td>
+                            <td><?= $product['Name']; ?></td>
+                            <td><?= $product['Price']; ?></td>
+                            <td><?= $product['Description']; ?></td>
+                            <td><?= $product['quantity_on_stock']; ?></td>
+                            <td>
+                              <a href="" class="btn btn-info btn-sm">Read</a>
+                              <a href="product-update.php" class="btn btn-success btn-sm">Update</a>
+                              <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                          </tr>
+                          <?php
+                        }
+                    }
+                    else{
+                      echo "<h4>No record was found</h4>";
+                    }
+                  ?>
+                  <tr>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
