@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require 'data.php';
 ?>
 
@@ -13,7 +14,10 @@
   
   <body>
 
-    <div class="container">
+    <div class="container mt-4">
+
+      <?php include('message.php'); ?>
+
       <div class="row">
         <div class="col-md-12">
           <div class="card">
@@ -23,12 +27,12 @@
               </h4>
             </div>
             <div class="card-body">
-              <table class="table table-bordered table-striped">
-                <thead>
+              <table class="table table-bordered">
+                <thead class="table table-light">
                   <tr>  
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Price</th>
+                    <th>Price(R)</th>
                     <th>Description</th>
                     <th>Quantity_on_Stock</th>
                     <th>Action</th>
@@ -52,7 +56,7 @@
                             <td><?= $product['quantity_on_stock']; ?></td>
                             <td>
                               <a href="" class="btn btn-info btn-sm">Read</a>
-                              <a href="product-update.php" class="btn btn-success btn-sm">Update</a>
+                              <a href="product-update.php?id=<?=$product['id'];?>" class="btn btn-success btn-sm">Update</a>
                               <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                           </tr>
