@@ -1,7 +1,26 @@
 <?php
 session_start();
 require 'data.php';
+//Delete Button
+if(isset($_POST['delete_product']))
+{
+    $product_id = mysqli_real_escape_string($con, $_POST['delete_product']);
 
+    $query = "DELETE FROM products WHERE id='$product_id'";
+    $query_run = mysqli_query($con, $query);
+    if($query_run)
+    {
+    $_SESSION['message'] = "Product deleted successfully";
+    header("Location: index.php");
+    exit(0);
+    }
+    else 
+    {
+    $_SESSION['message'] = "Product is NOT deleted";
+    header("Location: index.php");
+    exit(0); 
+    }
+    }
 // Update Button
 if(isset($_POST['update_product']))
 {

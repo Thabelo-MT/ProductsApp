@@ -27,7 +27,7 @@
               </h4>
             </div>
             <div class="card-body">
-              <table class="table table-bordered">
+              <table class="table table-bordered table-dark table-striped">
                 <thead class="table table-light">
                   <tr>  
                     <th>Id</th>
@@ -57,7 +57,9 @@
                             <td>
                               <a href="products-read.php?id=<?=$product['id'];?>" class="btn btn-info btn-sm">Read</a>
                               <a href="product-update.php?id=<?=$product['id'];?>" class="btn btn-success btn-sm">Update</a>
-                              <a href="" class="btn btn-danger btn-sm">Delete</a>
+                              <form action="code.php" method="POST" class="d-inline">
+                                  <button type="submit" name="delete_product" value="<?=$product['id'];?>" class="btn btn-danger btn-sm">Delete</a>
+                              </form>
                             </td>
                           </tr>
                           <?php

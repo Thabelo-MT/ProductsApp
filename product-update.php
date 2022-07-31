@@ -22,7 +22,7 @@ require 'data.php';
     <div class="card">
     <div class="card-reader">
         <h4>Product Update
-        <a href="index.php" class="btn btn-danger float-end">BACK</a>
+        <a href="index.php" class="btn btn-secondary float-end">BACK</a>
         </h4>
     </div>
     <div class="card-body">
