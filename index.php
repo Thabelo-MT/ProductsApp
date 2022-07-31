@@ -28,7 +28,7 @@
             </div>
             <div class="card-body">
               <table class="table table-bordered table-dark table-striped">
-                <thead class="table table-light">
+                <thead class="table table-dark">
                   <tr>  
                     <th>Id</th>
                     <th>Name</th>
