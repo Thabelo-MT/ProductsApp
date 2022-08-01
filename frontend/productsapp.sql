@@ -1,14 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Host: mysql-server
--- Generation Time: Jul 31, 2022 at 05:56 PM
--- Server version: 8.0.19
--- PHP Version: 7.4.1
+phpMyAdmin SQL Dump
+version 5.2.0
+https://www.phpmyadmin.net/
+
+Host: 127.0.0.1
+Generation Time: Jul 31, 2022 at 09:27 PM
+Server version: 10.4.24-MariaDB
+PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,12 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `products` (
-  `id` int NOT NULL,
-  `Name` int NOT NULL,
-  `Price` int NOT NULL,
-  `Description` int NOT NULL,
-  `quantity_on_stock` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int(100) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Price` bigint(20) NOT NULL,
+  `Description` text NOT NULL,
+  `quantity_on_stock` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `Name`, `Price`, `Description`, `quantity_on_stock`) VALUES
+(3, 'Chebe hair food', 121, 'This hair food grows your hair within a week, apply it before you sleep.', 110),
+(4, 'Spray', 12, 'Gives your hair moisture', 185),
+(5, 'Curl Activator', 45, 'Gives your hair some curls, tired of combing your hair on a daily basis? ', 22);
 
 --
 -- Indexes for dumped tables
@@ -54,7 +62,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
