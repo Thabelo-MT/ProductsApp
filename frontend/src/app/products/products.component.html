@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="alert alert-success" *ngIf="isDeleted">
+      Product successfully deleted.
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <a class="btn btn-primary btn-sm float-end m-2" routerLink="/add">Add</a>
+        <table class="table table-bordered table-dark table-striped">
+          <thead class="table table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Price(R)</th>
+              <th>Description</th>
+              <th>Quantity_on_Stock</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td>{{product.id}} </td>
+              <td>{{product.Name}} </td>
+              <td>{{product.Price}}</td>
+              <td>{{product.Description}}</td>
+              <td>{{product.quantity_on_stock}}</td>
+              <td>
+
+                <a class="btn btn-success btn-sm me-1" [routerLink]="['/update',product.id]">Update</a>
+
+                    <a><span class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Delete</span></a>
+
+              </td>
+            </tr>
+            </tbody>
+        </table>
+

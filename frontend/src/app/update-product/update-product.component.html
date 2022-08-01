@@ -1,0 +1,26 @@
+<div class="alert alert-success" *ngIf="isAdded">
+  Product successfully updated.
+</div>
+<div class="col-4 m-4">
+  <div class="mb-3">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="product.Name" name="Name" class="form-control">
+  </div>
+  <div class="mb-3">
+      <label>Price</label>
+      <input type="text" [(ngModel)]="product.Price" name="Price" class="form-control">
+  </div>
+  <div class="mb-3">
+      <label>Description</label>
+      <input type="text" [(ngModel)]="product.Description" name="Description" class="form-control">
+  </div>
+  <div class="mb-3">
+      <label>Quantity on Stock</label>
+      <input type="text" [(ngModel)]="product.quantity_on_stock" name="quantity_on_stock" class="form-control">
+  </div>
+  <div class="mb-3">
+      <button type="submit"   class="btn btn-primary" (click)="updateProduct()">Add Product</button>
+  </div>
+
+</div>
+
